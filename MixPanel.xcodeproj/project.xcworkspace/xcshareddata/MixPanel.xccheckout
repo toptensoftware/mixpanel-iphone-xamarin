@@ -5,27 +5,31 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7889B56F-2DC4-46AB-81E0-30BCA180B544</string>
+	<string>EE1A8831-6B87-49E5-978E-38C0AE9B3C8D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MixPanel</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</key>
 		<string>https://github.com/mixpanel/mixpanel-iphone.git</string>
+		<key>E0677C39-9D44-4325-A88D-0DD486A916D1</key>
+		<string>ssh://github.com/toptensoftware/mixpanel-iphone-xamarin.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Xamarin/MixPanel.xcodeproj/project.xcworkspace</string>
+	<string>MixPanel.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</key>
-		<string>../../..</string>
+		<string>../../mixpanel-iphone</string>
+		<key>E0677C39-9D44-4325-A88D-0DD486A916D1</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/mixpanel/mixpanel-iphone.git</string>
+	<string>ssh://github.com/toptensoftware/mixpanel-iphone-xamarin.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</string>
+	<string>E0677C39-9D44-4325-A88D-0DD486A916D1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</string>
 			<key>IDESourceControlWCCName</key>
 			<string>mixpanel-iphone</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E0677C39-9D44-4325-A88D-0DD486A916D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mixpanel-iphone-xamarin</string>
 		</dict>
 	</array>
 </dict>

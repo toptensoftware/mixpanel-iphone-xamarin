@@ -1,37 +1,41 @@
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
-PROJECT_ROOT=.
-TARGET=MixPanel
-PROJECT=$(PROJECT_ROOT)/$(TARGET).xcodeproj
+PROJECT=./MixPanel.xcodeproj
 CONFIG=Release
+MONOXBUILD=/Library/Frameworks/Mono.framework/Commands/xbuild
 
-all: lib$(TARGET).a $(PROJECT_ROOT)/build/MPNotification.storyboardc $(PROJECT_ROOT)/build/MPSurvey.storyboardc
+all: MixPanel.dll
 
 libi386.a:
-	$(XBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration $(CONFIG) clean build
-	-mv $(PROJECT_ROOT)/build/$(CONFIG)-iphonesimulator/lib$(TARGET).a $@
+	$(XBUILD) -project $(PROJECT) -target MixPanel -sdk iphonesimulator -configuration $(CONFIG) clean build
+	-mv ./build/$(CONFIG)-iphonesimulator/libMixPanel.a $@
 
 libArmv7.a:
-	$(XBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphoneos -arch armv7 -configuration $(CONFIG) clean build
-	-mv $(PROJECT_ROOT)/build/$(CONFIG)-iphoneos/lib$(TARGET).a $@
+	$(XBUILD) -project $(PROJECT) -target MixPanel -sdk iphoneos -arch armv7 -configuration $(CONFIG) clean build
+	-mv ./build/$(CONFIG)-iphoneos/libMixPanel.a $@
 
 libArmv7s.a:
-	$(XBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphoneos -arch armv7s -configuration $(CONFIG) clean build
-	-mv $(PROJECT_ROOT)/build/$(CONFIG)-iphoneos/lib$(TARGET).a $@
+	$(XBUILD) -project $(PROJECT) -target MixPanel -sdk iphoneos -arch armv7s -configuration $(CONFIG) clean build
+	-mv ./build/$(CONFIG)-iphoneos/libMixPanel.a $@
 
 libArm64.a:
-	$(XBUILD) -project $(PROJECT) -target $(TARGET) -sdk iphoneos -arch arm64 -configuration $(CONFIG) clean build
-	-mv $(PROJECT_ROOT)/build/$(CONFIG)-iphoneos/lib$(TARGET).a $@
+	$(XBUILD) -project $(PROJECT) -target MixPanel -sdk iphoneos -arch arm64 -configuration $(CONFIG) clean build
+	-mv ./build/$(CONFIG)-iphoneos/libMixPanel.a $@
 
-lib$(TARGET).a: libi386.a libArmv7.a libArmv7s.a libArm64.a
-	lipo -create -output lib$(TARGET).a $^
+libMixPanel.a: libi386.a libArmv7.a libArmv7s.a libArm64.a
+	lipo -create -output libMixPanel.a $^
 
-$(PROJECT_ROOT)/build/MPNotification.storyboardc:
-	ibtool --output-format binary1 --compile $@ $(PROJECT_ROOT)/../MixPanel/MPNotification.storyboard
+./build/MPNotification.storyboardc:
+	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPNotification.storyboard
 
-$(PROJECT_ROOT)/build/MPSurvey.storyboardc:
-	ibtool --output-format binary1 --compile $@ $(PROJECT_ROOT)/../MixPanel/MPSurvey.storyboard
+./build/MPSurvey.storyboardc:
+	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPSurvey.storyboard
+
+MixPanel.dll: libMixPanel.a ./build/MPNotification.storyboardc ./build/MPSurvey.storyboardc
+	$(MONOXBUILD) /p:Configuration=Release MixPanelBinding/MixPanel.csproj
+	cp MixPanelBinding/bin/Release/MixPanel.dll .
 
 clean:
-	rm -rf $(PROJECT_ROOT)/build/MPNotification.storyboardc
-	rm -rf $(PROJECT_ROOT)/build/MPSurvey.storyboardc
+	rm -f MixPanel.dll
+	rm -rf ./build/MPNotification.storyboardc
+	rm -rf ./build/MPSurvey.storyboardc
 	rm -f lib*.a
