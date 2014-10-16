@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7889B56F-2DC4-46AB-81E0-30BCA180B544</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MixPanel</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</key>
+		<string>https://github.com/mixpanel/mixpanel-iphone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Xamarin/MixPanel.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mixpanel/mixpanel-iphone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6AC06EA0-6DEF-4567-B2A8-3C71282FA920</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mixpanel-iphone</string>
+		</dict>
+	</array>
+</dict>
+</plist>
