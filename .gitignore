@@ -9,5 +9,4 @@ obj
 xcuserdata
 DerivedData
 build
-*.dll
 lib*.a
