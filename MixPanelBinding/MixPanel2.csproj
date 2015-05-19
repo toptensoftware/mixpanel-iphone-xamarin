@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB6B7FA3-519A-4EEE-8DC8-648DE2B765E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MixPanel</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>MixPanel</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="libMixPanel.linkwith.cs">
+      <DependentUpon>libMixPanel.a</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="libMixPanel.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\MPCloseBtn.png">
+      <Link>Resources\MPCloseBtn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\MPCloseBtn%402x.png">
+      <Link>Resources\MPCloseBtn%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPArrowLeft.imageset\MPArrowLeft.png">
+      <Link>Resources\MPArrowLeft.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPArrowLeft.imageset\MPArrowLeft%402x.png">
+      <Link>Resources\MPArrowLeft%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPArrowRight.imageset\MPArrowRight.png">
+      <Link>Resources\MPArrowRight.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPArrowRight.imageset\MPArrowRight%402x.png">
+      <Link>Resources\MPArrowRight%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPCheckmark.imageset\MPCheckmark.png">
+      <Link>Resources\MPCheckmark.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPCheckmark.imageset\MPCheckmark%402x.png">
+      <Link>Resources\MPCheckmark%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPDismissKeyboard.imageset\MPDismissKeyboard.png">
+      <Link>Resources\MPDismissKeyboard.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPDismissKeyboard.imageset\MPDismissKeyboard%402x.png">
+      <Link>Resources\MPDismissKeyboard%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPLogo.imageset\MPLogo.png">
+      <Link>Resources\MPLogo.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPLogo.imageset\MPLogo%402x.png">
+      <Link>Resources\MPLogo%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPNotification.storyboardc\Info.plist">
+      <Link>Resources\MPNotification.storyboardc\Info.plist</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPNotification.storyboardc\MPNotificationViewController.nib">
+      <Link>Resources\MPNotification.storyboardc\MPNotificationViewController.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPNotification.storyboardc\puo-Hy-QiQ-view-Wch-Xc-Avw.nib">
+      <Link>Resources\MPNotification.storyboardc\puo-Hy-QiQ-view-Wch-Xc-Avw.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\Info.plist">
+      <Link>Resources\MPSurvey.storyboardc\Info.plist</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\MPSurveyMultipleChoiceQuestionViewController.nib">
+      <Link>Resources\MPSurvey.storyboardc\MPSurveyMultipleChoiceQuestionViewController.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\MPSurveyNavigationController.nib">
+      <Link>Resources\MPSurvey.storyboardc\MPSurveyNavigationController.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\MPSurveyTextQuestionViewController.nib">
+      <Link>Resources\MPSurvey.storyboardc\MPSurveyTextQuestionViewController.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\RIP-po-dgx-view-cp6-lZ-a9t.nib">
+      <Link>Resources\MPSurvey.storyboardc\RIP-po-dgx-view-cp6-lZ-a9t.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\V5X-Ik-MvF-view-dcL-M9-gG3.nib">
+      <Link>Resources\MPSurvey.storyboardc\V5X-Ik-MvF-view-dcL-M9-gG3.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\build\MPSurvey.storyboardc\tDf-fb-udT-view-LG7-cL-aRp.nib">
+      <Link>Resources\MPSurvey.storyboardc\tDf-fb-udT-view-LG7-cL-aRp.nib</Link>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\MPNotification.storyboardc\" />
+    <Folder Include="Resources\MPSurvey.storyboardc\" />
+  </ItemGroup>
+</Project>

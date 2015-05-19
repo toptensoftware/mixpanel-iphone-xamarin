@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Drawing;
-
-using MonoTouch.ObjCRuntime;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using ObjCRuntime;
+using Foundation;
+using UIKit;
 
 namespace MixPanel
 {
@@ -48,7 +46,7 @@ namespace MixPanel
 		bool ShowNotificationOnActive { get; set; }
 
 		[Export ("miniNotificationPresentationTime")]
-		float MiniNotificationPresentationTime { get; set; }
+		nfloat MiniNotificationPresentationTime { get; set; }
 
 		[Export ("delegate", ArgumentSemantic.Assign)]
 		MixpanelDelegate Delegate { get; set; }

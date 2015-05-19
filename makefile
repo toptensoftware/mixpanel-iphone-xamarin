@@ -21,8 +21,8 @@ libArm64.a:
 	$(XBUILD) -project $(PROJECT) -target MixPanel -sdk iphoneos -arch arm64 -configuration $(CONFIG) clean build
 	-mv ./build/$(CONFIG)-iphoneos/libMixPanel.a $@
 
-libMixPanel.a: libi386.a libArmv7.a libArmv7s.a libArm64.a
-	lipo -create -output libMixPanel.a $^
+./MixPanelBinding/libMixPanel.a: libi386.a libArmv7.a libArmv7s.a libArm64.a
+	lipo -create -output ./MixPanelBinding/libMixPanel.a $^
 
 ./build/MPNotification.storyboardc:
 	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPNotification.storyboard
@@ -30,7 +30,7 @@ libMixPanel.a: libi386.a libArmv7.a libArmv7s.a libArm64.a
 ./build/MPSurvey.storyboardc:
 	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPSurvey.storyboard
 
-MixPanel.dll: libMixPanel.a ./build/MPNotification.storyboardc ./build/MPSurvey.storyboardc
+MixPanel.dll: ./MixPanelBinding/libMixPanel.a ./build/MPNotification.storyboardc ./build/MPSurvey.storyboardc
 	$(MONOXBUILD) /p:Configuration=Release MixPanelBinding/MixPanel.csproj
 	cp MixPanelBinding/bin/Release/MixPanel.dll .
 
