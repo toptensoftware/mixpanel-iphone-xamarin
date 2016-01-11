@@ -56,12 +56,6 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="..\mixpanel-iphone\MixPanel\MPCloseBtn.png">
-      <Link>Resources\MPCloseBtn.png</Link>
-    </BundleResource>
-    <BundleResource Include="..\mixpanel-iphone\MixPanel\MPCloseBtn%402x.png">
-      <Link>Resources\MPCloseBtn%402x.png</Link>
-    </BundleResource>
     <BundleResource Include="..\mixpanel-iphone\MixPanel\Media.xcassets\MPArrowLeft.imageset\MPArrowLeft.png">
       <Link>Resources\MPArrowLeft.png</Link>
     </BundleResource>
@@ -121,6 +115,12 @@
     </BundleResource>
     <BundleResource Include="..\build\MPSurvey.storyboardc\tDf-fb-udT-view-LG7-cL-aRp.nib">
       <Link>Resources\MPSurvey.storyboardc\tDf-fb-udT-view-LG7-cL-aRp.nib</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\Mixpanel\Media.xcassets\MPCloseBtn.imageset\MPCloseBtn.png">
+      <Link>Resources\MPCloseBtn.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\mixpanel-iphone\Mixpanel\Media.xcassets\MPCloseBtn.imageset\MPCloseBtn%402x.png">
+      <Link>Resources\MPCloseBtn%402x.png</Link>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>

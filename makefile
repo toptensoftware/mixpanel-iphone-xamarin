@@ -25,10 +25,10 @@ libArm64.a:
 	lipo -create -output ./MixPanelBinding/libMixPanel.a $^
 
 ./build/MPNotification.storyboardc:
-	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPNotification.storyboard
+	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/Mixpanel/MPNotification.storyboard
 
 ./build/MPSurvey.storyboardc:
-	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/MixPanel/MPSurvey.storyboard
+	ibtool --output-format binary1 --compile $@ ./mixpanel-iphone/Mixpanel/MPSurvey.storyboard
 
 MixPanel.dll: ./MixPanelBinding/libMixPanel.a ./build/MPNotification.storyboardc ./build/MPSurvey.storyboardc
 	$(MONOXBUILD) /p:Configuration=Release MixPanelBinding/MixPanel.csproj
