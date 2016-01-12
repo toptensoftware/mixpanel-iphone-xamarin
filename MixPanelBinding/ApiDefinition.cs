@@ -33,8 +33,8 @@ namespace MixPanel
 		[Export ("checkForSurveysOnActive")]
 		bool CheckForSurveysOnActive { get; set; }
 
-		[Export ("showForSurveysOnActive")]
-		bool ShowForSurveysOnActive { get; set; }
+		[Export ("showSurveyOnActive")]
+		bool ShowSurveyOnActive { get; set; }
 
 		[Export ("checkForNotificationsOnActive")]
 		bool CheckForNotificationsOnActive { get; set; }
