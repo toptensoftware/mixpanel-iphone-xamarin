@@ -178,6 +178,55 @@ namespace MixPanel
 		[Export ("mixpanelWillFlush:")]
 		bool mixpanelWillFlush (Mixpanel mixpanel);
 	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface MPTweak
+	{
+		[Export ("initWithName:andEncoding:")]
+		IntPtr Constructor (string name, string encoding);
+
+		[Export ("name", ArgumentSemantic.Copy)]
+		string Name { get; }
+
+		[Export ("encoding", ArgumentSemantic.Copy)]
+		string Encoding { get; }
+
+		[Export ("defaultValue", ArgumentSemantic.Strong)]
+		NSObject DefaultValue { get; set; }
+
+		[Export ("currentValue", ArgumentSemantic.Strong)]
+		NSObject CurrentValue { get; set; }
+
+		[Export ("minimumValue", ArgumentSemantic.Strong)]
+		NSObject MinimumValue { get; set; }
+
+		[Export ("maximumValue", ArgumentSemantic.Strong)]
+		NSObject MaximumValue { get; set; }
+
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface MPTweakStore
+	{
+		[Static, Export ("sharedInstance")]
+		MPTweakStore SharedInstance ();
+
+		[Export ("tweaks", ArgumentSemantic.Copy)]
+		MPTweak[] Tweaks { get; }
+
+		[Export ("tweakWithName:")]
+		MPTweak TweakWithName (string name);
+
+		[Export ("addTweak:")]
+		void AddTweak (MPTweak tweak);
+
+		[Export ("removeTweak:")]
+		void RemoveTweak (MPTweak tweak);
+
+		[Export ("reset")]
+		void Reset ();
+	}
+
 }
 /*
 	[BaseType (typeof (NSObject))]
